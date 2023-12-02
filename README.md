@@ -53,3 +53,8 @@ Run the Streamlit app with the command streamlit run app.py.
 
 Open your web browser and go to the provided URL (usually http://localhost:8501).
 
+### A YouTube links:
+
+## Tuberculosis video
+
+###      https://youtu.be/TMXtKx3vBEg
