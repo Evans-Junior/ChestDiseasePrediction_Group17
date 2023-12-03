@@ -2,13 +2,14 @@ import subprocess
 subprocess.run(["pip", "install", "opencv-python"])
 import streamlit as st
 import numpy as np
-import cv2
 from keras.models import load_model
 from tensorflow.keras.preprocessing.image import img_to_array, load_img
 
-# Load the trained model
-model_path = "tuberculosisModel.h5"
-model = load_model(model_path)
+# Load the trained models
+tuberculosis_model_path = "tuberculosisModel.h5"
+pneumonia_model_path = "PneumoniaModel.h5"
+tuberculosis_model = load_model(tuberculosis_model_path)
+pneumonia_model = load_model(pneumonia_model_path)
 
 # Function to preprocess the input image
 def preprocess_image(image_path):
@@ -19,24 +20,49 @@ def preprocess_image(image_path):
     return img_array
 
 # Streamlit app
-st.title("Tuberculosis Prediction App")
+page = st.sidebar.radio("Select Disease", ["Tuberculosis", "Pneumonia"])
 
-# File uploader
-uploaded_file = st.file_uploader("Choose an X-ray image", type=["jpg", "png"])
+if page == "Tuberculosis":
+    st.title("Tuberculosis Prediction App")
+    uploaded_file = st.file_uploader("Choose an X-ray image", type=["jpg", "png"])
 
-if uploaded_file is not None:
-    # Display the uploaded image
-    st.image(uploaded_file, caption="Uploaded Image", use_column_width=True)
+    if uploaded_file is not None:
+        # Display the uploaded image
+        st.image(uploaded_file, caption="Uploaded Image", use_column_width=True)
 
-    # Preprocess the image
-    processed_image = preprocess_image(uploaded_file)
+        # Preprocess the image
+        processed_image = preprocess_image(uploaded_file)
 
-    # Make prediction
-    prediction = model.predict(processed_image)
+        # Make prediction
+        prediction = tuberculosis_model.predict(processed_image)
 
-    # Display the prediction
-    st.subheader("Prediction:")
-    if prediction[0][0] > 0.5:
-        st.write("Normal")
-    else:
-        st.write("Tuberculosis")
+        # Display the prediction
+        st.subheader("Prediction:")
+        if prediction[0][0] > 0.5:
+            st.write("Normal")
+        else:
+            st.write("Tuberculosis")
+
+if page == "Pneumonia":
+    st.title("Pneumonia Prediction App")
+    # Rest of the pneumonia prediction code goes here
+    uploaded_file = st.file_uploader("Choose an X-ray image for Pneumonia", type=["jpg", "png","jpeg"])
+    
+    if uploaded_file is not None:
+        # Display the uploaded image
+        st.image(uploaded_file, caption="Uploaded Image", use_column_width=True)
+
+        # Preprocess the image
+        processed_image = preprocess_image(uploaded_file)
+
+        # Make prediction for Pneumonia
+        pneumonia_prediction = pneumonia_model.predict(processed_image)
+
+        # Display the prediction
+        st.subheader("Pneumonia Prediction:")
+        if pneumonia_prediction[0][0] > 0.5:
+            st.write("Normal")
+        else:
+            st.write("Pneumonia")
+
+

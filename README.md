@@ -1,6 +1,7 @@
-# Tuberculosis Prediction App
+# Tuberculosis and Pneumonia Prediction App
 
-This project is a simple application that predicts whether an X-ray image indicates Tuberculosis or is Normal. It uses a deep learning model trained on a dataset of Tuberculosis and Normal X-ray images.
+This project is a simple application that predicts whether an X-ray image indicates Tuberculosis or Pneumonia using pre-trained deep learning models. The application is built using Streamlit, OpenCV, and TensorFlow.
+
 
 ## Table of Contents
 
@@ -14,47 +15,53 @@ This project is a simple application that predicts whether an X-ray image indica
 
 ## Introduction
 
-The Tuberculosis Prediction App is built using Streamlit and TensorFlow. Users can upload an X-ray image, and the application will predict whether the image indicates Tuberculosis or is Normal.
+The Tuberculosis and Pneumonia Prediction App allows users to upload X-ray images for prediction. The application uses two deep learning models—one for Tuberculosis prediction and the other for Pneumonia prediction.
 
 ## Features
 
-- Upload X-ray images for prediction.
-- Instantly get predictions based on a pre-trained deep learning model.
+- Upload X-ray images for Tuberculosis or Pneumonia prediction.
+- Instantly get predictions based on pre-trained deep learning models.
 
 ## Installation
+    1. Ensure you have Python installed.
 
-Ensure you have Python installed. Clone the repository and install the required dependencies:
+    2. Clone the repository:
+        bash
+        Copy code
+        git clone https://github.com/your_username/tuberculosis-pneumonia-prediction.git
 
-pip install streamlit opencv-python tensorflow
+    3. Navigate to the project directory:
+        bash
+        Copy code
+        cd tuberculosis-pneumonia-prediction
+
+    4. Install the required dependencies:
+        bash
+        Copy code
+        pip install -r requirements.txt
 
 ## Usage
 
 Run the app using the following command:
-
-streamlit run app.py
-
-
-Visit the provided URL (usually http://localhost:8501) in your web browser to use the application.
+    bash
+    Copy code
+    streamlit run app.py
+    Visit the provided URL (usually http://localhost:8501) in your web browser to use the application.
 
 ## How to Host Locally
 
- 1. Install the required dependencies as mentioned in the Installation section.
+    1. Install the required dependencies as mentioned in the Installation section.
 
- 2. Run the Streamlit app with the command streamlit run app.py.
-
- 3. Open your web browser and go to the provided URL (usually http://localhost:8501).
+    2. Run the Streamlit app with the command:
+        bash
+        Copy code
+        streamlit run app.py
+        Open your web browser and go to the provided URL (usually http://localhost:8501).
 
 ## Contributing
-Contributions are always welcome!
 
-Install the required dependencies as mentioned in the Installation section.
-
-Run the Streamlit app with the command streamlit run app.py.
-
-Open your web browser and go to the provided URL (usually http://localhost:8501).
+Contributions are always welcome! Follow the installation instructions to set up the development environment. Make your changes, and submit a pull request.
 
 ### A YouTube links:
 
-## Tuberculosis video
-
-###      https://youtu.be/TMXtKx3vBEg
+##     https://youtu.be/208ZnaSw1Og
