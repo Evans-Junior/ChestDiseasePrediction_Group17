@@ -26,25 +26,21 @@ The Tuberculosis and Pneumonia Prediction App allows users to upload X-ray image
     1. Ensure you have Python installed.
 
     2. Clone the repository:
-        bash
-        Copy code
+
         git clone https://github.com/your_username/tuberculosis-pneumonia-prediction.git
 
     3. Navigate to the project directory:
-        bash
-        Copy code
+
         cd tuberculosis-pneumonia-prediction
 
     4. Install the required dependencies:
-        bash
-        Copy code
+
         pip install -r requirements.txt
 
 ## Usage
 
 Run the app using the following command:
-    bash
-    Copy code
+
     streamlit run app.py
     Visit the provided URL (usually http://localhost:8501) in your web browser to use the application.
 
@@ -53,8 +49,6 @@ Run the app using the following command:
     1. Install the required dependencies as mentioned in the Installation section.
 
     2. Run the Streamlit app with the command:
-        bash
-        Copy code
         streamlit run app.py
         Open your web browser and go to the provided URL (usually http://localhost:8501).
 
